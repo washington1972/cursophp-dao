@@ -192,6 +192,18 @@ class Usuario
         $this->setData(new DateTime($dado['dtcadastro']));
     }
 
+    public function delete(){
+
+        $sql = new Sql();
+        $sql->query("DELETE FROM tb_usuarios WHERE idusuario = :ID" , array(
+            ":ID" => $this->getIdusuario()
+        ));
+        $this->setIdusuario(0);
+        $this->setLogin("");
+        $this->setSenha("");
+        $this->setData(new DateTime()); //pode ser null dependendo da aplicação.
+    }
+
     public function __toString()
     {
         return json_encode((array(

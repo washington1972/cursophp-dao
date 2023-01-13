@@ -15,9 +15,9 @@ $root->loadById(3); */
 
 
 //carrega uma lista de usuários
-$lista = Usuario::getList();
+/* $lista = Usuario::getList();
 
-echo json_encode($lista, JSON_PRETTY_PRINT);
+echo json_encode($lista, JSON_PRETTY_PRINT); */
 
 //carrega uma lista de usuários pelo login
 
@@ -49,4 +49,11 @@ $usuarios->loadById(3);
 $usuarios->update("fernando", "!#test");
 
 echo $usuarios; */
+
+
+$usuario = new Usuario();
+$usuario->loadById(2);
+$usuario->delete();
+
+echo $usuario;
 
